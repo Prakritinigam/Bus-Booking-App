@@ -14,8 +14,6 @@ function App() {
   return (
     <>
       <Router basename="/Bus-Booking-App">
-        {" "}
-        {/* Added basename */}
         <BookingProvider>
           <Navbar />
           <Routes>
