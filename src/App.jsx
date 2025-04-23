@@ -13,11 +13,15 @@ import SelectBus from "./Components/SelectBus";
 function App() {
   return (
     <>
-      <HashRouter basename="/Bus-Booking-App">
+      <HashRouter>
         <BookingProvider>
           <Navbar />
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/"
+              element={<HomePage />}
+              basename="/Bus-Booking-App"
+            />
             <Route path="/buses" element={<BusListing />} />
             <Route path="/selectbus" element={<SelectBus />} />
           </Routes>
