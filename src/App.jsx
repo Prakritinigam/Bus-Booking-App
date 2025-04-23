@@ -2,7 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Changed HashRouter to BrowserRouter
 import Navbar from "./Components/Navbar";
 import HomePage from "./Components/HomePage";
 import { BookingProvider } from "./BusContext/BookingContext";
@@ -13,7 +13,9 @@ import SelectBus from "./Components/SelectBus";
 function App() {
   return (
     <>
-      <HashRouter>
+      <Router basename="/Bus-Booking-App">
+        {" "}
+        {/* Added basename */}
         <BookingProvider>
           <Navbar />
           <Routes>
@@ -23,7 +25,7 @@ function App() {
           </Routes>
         </BookingProvider>
         <ToastContainer position="top-right" autoClose={3000} />
-      </HashRouter>
+      </Router>
     </>
   );
 }
