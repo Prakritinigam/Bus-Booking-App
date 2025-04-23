@@ -17,11 +17,7 @@ function App() {
         <BookingProvider>
           <Navbar />
           <Routes>
-            <Route
-              path="/"
-              element={<HomePage />}
-              basename="/Bus-Booking-App"
-            />
+            <Route path="/" element={<HomePage />} />
             <Route path="/buses" element={<BusListing />} />
             <Route path="/selectbus" element={<SelectBus />} />
           </Routes>
