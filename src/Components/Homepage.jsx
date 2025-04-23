@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/HomePage.css";
 import bus from "../assets/bus.png";
 import SearchPage from "./SearchPage";
@@ -24,6 +24,9 @@ const HomePage = () => {
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
+  useEffect(() => {
+    localStorage.removeItem("bookedSeats");
+  }, []);
 
   return (
     <>

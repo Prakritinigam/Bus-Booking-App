@@ -142,11 +142,6 @@ const SelectBus = () => {
 
     setSeatMap(updatedLayout);
     setSelectedSeats([]);
-    toast.success(
-      `Booking Confirmed: ${selectedSeats.join(
-        ", "
-      )} \n Passenger details: ${name} | ${email} | ${phone} `
-    );
 
     const allBooked = updatedLayout
       .flat()
@@ -160,7 +155,14 @@ const SelectBus = () => {
     setPhone("");
     setName("");
   };
-
+  toast.success(
+    `Booking Confirmed: ${selectedSeats.join(
+      ", "
+    )} \n Passenger details: ${name} | ${email} | ${phone} `
+  );
+alert( `Booking Confirmed: ${selectedSeats.join(
+      ", "
+    )} \n Passenger details: ${name} | ${email} | ${phone} `)
   return (
     <div className="row">
       <div className="layout-container col-sm-6">
