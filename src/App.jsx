@@ -13,7 +13,7 @@ import SelectBus from "./Components/SelectBus";
 function App() {
   return (
     <>
-      <HashRouter>
+      <HashRouter basename="/Bus-Booking-App">
         <BookingProvider>
           <Navbar />
           <Routes>
