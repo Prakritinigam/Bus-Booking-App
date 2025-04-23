@@ -1,0 +1,84 @@
+.page-container {
+  padding: 60px;
+}
+.page-container h2 {
+  padding-left: 20px;
+  font-family: sans-serif;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+.search-container {
+  background-color: rgb(7, 7, 171);
+  padding: 30px;
+}
+.form-fields {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.input-icon {
+  position: relative;
+  width: 370px;
+}
+.input-icon i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #555;
+  font-size: 14px;
+}
+.form-fields input {
+  padding: 10px;
+  width: 380px;
+  padding-left: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-button {
+  padding-left: 50px;
+  margin-bottom: 20px;
+  padding-right: 50px;
+}
+
+@media (max-width: 550px) {
+  .page-container {
+    padding: 0px;
+  }
+  .form-fields input {
+    padding: 10px;
+    width: 280px;
+    padding-left: 25px;
+  }
+}
+.input-icon {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 150px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  z-index: 999;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestions-list li:hover {
+  background-color: #f2f2f2;
+}

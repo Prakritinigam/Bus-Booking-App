@@ -1,0 +1,77 @@
+.buslogo {
+  height: 20px;
+}
+.bus-container {
+  padding: 40px;
+}
+.listcard {
+  margin-bottom: 30px;
+}
+.address {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+.seats {
+  float: right;
+  border: none;
+  padding-right: 30px;
+}
+
+.seats p {
+  font-weight: bold;
+}
+
+.skeleton-card {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.skeleton-img {
+  background-color: #ddd;
+  height: 150px;
+  width: 100%;
+  border-radius: 8px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-title,
+.skeleton-text-small {
+  background-color: #ddd;
+  height: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.skeleton-title {
+  width: 70%;
+}
+
+.skeleton-text-small {
+  width: 50%;
+}
+
+.skeleton-btn {
+  background-color: #ddd;
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  animation: pulse 1.5s infinite ease-in-out;
+  margin-top: 20px;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #ddd;
+  }
+  50% {
+    background-color: #f4f4f4;
+  }
+  100% {
+    background-color: #ddd;
+  }
+}
