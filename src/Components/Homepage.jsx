@@ -24,10 +24,10 @@ const HomePage = () => {
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
+
   useEffect(() => {
     localStorage.removeItem("bookedSeats");
-  }, []);
-
+  });
   return (
     <>
       <div className="container">

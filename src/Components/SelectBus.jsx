@@ -154,21 +154,18 @@ const SelectBus = () => {
     setEmail("");
     setPhone("");
     setName("");
-
+    alert(
+      `Booking Confirmed: ${selectedSeats.join(
+        ", "
+      )} \n Passenger details: ${name} | ${email} | ${phone} `
+    );
     toast.success(
       `Booking Confirmed: ${selectedSeats.join(
         ", "
       )} \n Passenger details: ${name} | ${email} | ${phone} `
     );
   };
-  toast.success(
-    `Booking Confirmed: ${selectedSeats.join(
-      ", "
-    )} \n Passenger details: ${name} | ${email} | ${phone} `
-  );
-alert( `Booking Confirmed: ${selectedSeats.join(
-      ", "
-    )} \n Passenger details: ${name} | ${email} | ${phone} `)
+
   return (
     <div className="row">
       <div className="layout-container col-sm-6">
@@ -181,7 +178,7 @@ alert( `Booking Confirmed: ${selectedSeats.join(
         <p>
           {selectedBus.boardingDetails?.map((board, index) => (
             <span key={index}>{board.boardingAddress} </span>
-          ))}
+          ))}{" "}
           &nbsp;➡&nbsp;
           {selectedBus.droppingDetails?.map((drop, index) => (
             <span key={index}>{drop.droppingAddress}</span>
@@ -235,82 +232,65 @@ alert( `Booking Confirmed: ${selectedSeats.join(
             />
           </div>
           {errors.name && <p className="text-danger">{errors.name}</p>}
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
+
+          <div className="mb-3 finalform">
+            <label htmlFor="exampleInputEmail" className="form-label">
               Email address <span style={{ color: "red" }}>*</span>
             </label>
             <input
               type="email"
               className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              value={email}
+              id="exampleInputEmail"
               onChange={(e) => setEmail(e.target.value)}
+              value={email}
               required
             />
-            <div id="emailHelp" className="form-text">
-              We'll never share your email with anyone else.
-            </div>
           </div>
           {errors.email && <p className="text-danger">{errors.email}</p>}
 
-          <div className="mb-3 d-flex gap-3">
-            <div className="w-50">
-              <label htmlFor="exampleInputAge" className="form-label">
-                Age <span style={{ color: "red" }}>*</span>
-              </label>
-              <input
-                type="number"
-                className="form-control"
-                id="exampleInputAge"
-                onChange={(e) => setAge(e.target.value)}
-                value={age}
-                required
-              />
-            </div>
-            {errors.age && <p className="text-danger">{errors.age}</p>}
-
-            <div className="w-50">
-              <label htmlFor="exampleInputPhone" className="form-label">
-                Phone <span style={{ color: "red" }}>*</span>
-              </label>
-              <input
-                type="tel"
-                className="form-control"
-                id="exampleInputPhone"
-                onChange={(e) => setPhone(e.target.value)}
-                value={phone}
-                required
-              />
-            </div>
+          <div className="mb-3 finalform">
+            <label htmlFor="exampleInputPhone" className="form-label">
+              Phone Number <span style={{ color: "red" }}>*</span>
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="exampleInputPhone"
+              onChange={(e) => setPhone(e.target.value)}
+              value={phone}
+              required
+            />
           </div>
           {errors.phone && <p className="text-danger">{errors.phone}</p>}
 
-          <div className="mb-3 form-check">
+          <div className="mb-3 finalform">
+            <label htmlFor="exampleInputAge" className="form-label">
+              Age <span style={{ color: "red" }}>*</span>
+            </label>
             <input
-              type="checkbox"
-              className="form-check-input"
-              id="exampleCheck1"
-              checked={agreed}
-              onChange={(e) => setAgreed(e.target.checked)}
+              type="text"
+              className="form-control"
+              id="exampleInputAge"
+              onChange={(e) => setAge(e.target.value)}
+              value={age}
+              required
             />
-            <label className="form-check-label" htmlFor="exampleCheck1">
-              I agree to terms <span style={{ color: "red" }}>*</span>
+          </div>
+          {errors.age && <p className="text-danger">{errors.age}</p>}
+
+          <div className="mb-3">
+            <label htmlFor="agree" className="form-label">
+              <input
+                type="checkbox"
+                onChange={() => setAgreed(!agreed)}
+                checked={agreed}
+              />
+              I agree to the terms and conditions
             </label>
           </div>
           {errors.agreed && <p className="text-danger">{errors.agreed}</p>}
-          <button
-            onClick={handleBooking}
-            disabled={
-              !selectedSeats.length ||
-              !email ||
-              !age ||
-              !agreed ||
-              !name ||
-              !phone
-            }
-            className="btn btn-primary"
-          >
+
+          <button className="btn btn-primary" onClick={handleBooking}>
             Book Now
           </button>
         </div>
